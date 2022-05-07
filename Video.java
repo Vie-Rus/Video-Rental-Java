@@ -1,19 +1,22 @@
 public class Video {
-	private String vName;
+	private String vidName;
 	private int year;
-	private int copyNumber;
+	private int copyNo;
 	private double rentalRate;
 	
-	public Video(String vName, int year, int copyNumber, double rentalRate) {
+	//source>general construtor using field
+	//source> generaate getters and setters>select getters
+
+	public Video(String vidName, int year, int copyNo, double rentalRate) {
 		super();
-		this.vName = vName;
+		this.vidName = vidName;
 		this.year = year;
-		this.copyNumber = copyNumber;
+		this.copyNo = copyNo;
 		this.rentalRate = rentalRate;
 	}
 
 	public String getvName() {
-		return vName;
+		return vidName;
 	}
 
 	public int getYear() {
@@ -21,18 +24,14 @@ public class Video {
 	}
 
 	public int getCopyNumber() {
-		return copyNumber;
+		return copyNo;
 	}
 
 	public double getRentalRate() {
 		return rentalRate;
 	}
 	
-	public String tovidString()
-	{
-		return String.format("\n\nVideo rented: %s\nYear: %14d\nCopy No.: %7d", vName, year, copyNumber ); 
+	public String tovidString() {
+		return String.format("\nVideo rented: %s\n Year: %14d\n Copy No.: %10d\n\n", vidName, year, copyNo); 
 	}
-
-	//source>general construtor using field
-	//source> generaate getters and setters>select getters
 }

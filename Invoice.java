@@ -1,24 +1,24 @@
 
 public class Invoice {
-	private Customer cust;
-	private Video vid;
+	private Customer customer;
+	private Video video;
 	private String dateRented;
 	private int numberDays;
 	
-	public Invoice(Customer cus, Video vid, String dateRented, int numberDays) {
+	public Invoice(Customer cust, Video video, String dateRented, int numberDays) {
 		super();
-		this.cust = cus;
-		this.vid = vid;
+		this.customer = cust;
+		this.video = video;
 		this.dateRented = dateRented;
 		this.numberDays = numberDays;
 	}
 
 	public Customer getCus() {
-		return cust;
+		return customer;
 	}
 
 	public Video getVid() {
-		return vid;
+		return video;
 	}
 
 	public String getDateRented() {
@@ -30,7 +30,7 @@ public class Invoice {
 	}
 
 	public double subTotal() {
-		return numberDays * vid.getRentalRate();
+		return numberDays * video.getRentalRate();
 	}
 	
 	public double tax() {
@@ -41,19 +41,7 @@ public class Invoice {
 		return subTotal() + tax();
 	}
 	
-	
-	public String toinvString()
-	{
-		return String.format("\n\nDaily Rate:%13s\nNumber of days %6d\n\nSubtotal %15.2f\nTax %20.2f\nTotal %18.2f",dateRented, numberDays, subTotal(), tax(), total()); 
+	public String toinvString() {
+		return String.format("Invoice:\n Daily Rate:%12s\n Days Rented: %7d\n-------------------------\nSubtotal %15.2f\nTax %20.2f\n-------------------------\nTotal %18.2f\n\n",dateRented, numberDays, subTotal(), tax(), total()); 
 	}
-	
-	//source>general construtor using field
-
-	//source> generaate getters and setters>select getters
-
-
-
-
-
-
 }

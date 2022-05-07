@@ -6,10 +6,9 @@ public class Customer
 	private String city;
 	private String state;
 	private String zip;
-	private String phoneNum;
+	private int phoneNum;
 	
-	public Customer(String name, String street, String city, String state, String zip, String phoneNum) {
-		
+	public Customer(String name, String street, String city, String state, String zip, int phoneNum) {
 		super();
 		this.name = name;
 		this.street = street;
@@ -40,17 +39,12 @@ public class Customer
 		return zip;
 	}
 
-	public String getPhoneNum() {
+	public int getPhoneNum() {
 		return phoneNum;
 	}
 	
-	public String tocusString()
-	{
-		return String.format("%s \n%s \n%s, %s %s\n%s",name, street, city, state, zip, phoneNum);
+	public String tocusString()	{
+		return String.format("Customer: %s\n %s\n %s %s %s %d\n",name, street, city, state, zip, phoneNum);
+							//Format: Name\n Street\n city/state/zip\n phone\n
 	}
-
-	
-	//source>general construtor using field
-	//source> generaate getters and setters>select getters
 }
-
